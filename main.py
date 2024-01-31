@@ -7,7 +7,7 @@ from UI_control import MainWindow_controller
 """打包成exe檔
 pip install pyinstaller
 打包成exe
-pyinstaller -F --name=rent_tool main.py
+pyinstaller -D --name=rent_tool main.py
 """
 
 class App(QtWidgets.QMainWindow, Ui_RentAutoPoster):

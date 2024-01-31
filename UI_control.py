@@ -189,19 +189,14 @@ class MainWindow_controller(QtWidgets.QMainWindow):
          picture = './UI/icon/logo123.png', 
          level = 'H', # 糾錯水平，預設是H(最高)
          colorized = True, # 背景圖片是否用彩色，True為彩色
-         save_name = 'post_qrcode.png') 
+         save_name = './UI/icon/post_qrcode.png') 
         #放網址qrcode圖片
-        # 获取当前脚本的路径
-        current_path = os.path.dirname(os.path.abspath(__file__))
-        # 构建图片文件的相对路径
-        qrcode_path = os.path.join(current_path, 'post_qrcode.png')
         # 获取 QLabel 的宽度和高度
         label_width = dialog.ui.qrcode.width()
         label_height = dialog.ui.qrcode.height()
-
         # 顯示網址 qrcode 圖片
         qpixmap_qr = QPixmap() 
-        if qpixmap_qr.load(qrcode_path):
+        if qpixmap_qr.load('./UI/icon/post_qrcode.png'):
             img_qr = qpixmap_qr.scaled(label_width, label_height, aspectRatioMode=Qt.KeepAspectRatio, transformMode=Qt.SmoothTransformation)
             dialog.ui.qrcode.setPixmap(img_qr)
         dialog.exec_()
